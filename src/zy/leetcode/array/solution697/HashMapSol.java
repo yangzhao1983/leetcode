@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by kaiser_zhao on 09/08/2019.
  */
-public class LinkedHashMap {
+public class HashMapSol {
 
     public static void main(String...strings){
         int[] nums = new int[]{1,2,2,3,1,4,2};
@@ -19,16 +19,6 @@ public class LinkedHashMap {
         Map<Integer, List<Integer>> indices = new HashMap<>();
         for(int i=0; i<nums.length;i++){
             indices.computeIfAbsent(nums[i], x->new ArrayList<Integer>()).add(i);
-        }
-
-        for(int i=0; i<nums.length;i++){
-            if(indices.containsKey(nums[i])){
-                indices.get(nums[i]).add(i);
-            }else{
-                List<Integer> list = new ArrayList<>();
-                list.add(i);
-                indices.put(nums[i], list);
-            }
         }
 
         // get the maximum frequency and length
