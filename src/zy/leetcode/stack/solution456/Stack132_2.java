@@ -45,6 +45,7 @@ public class Stack132_2 {
                     continue;
                 }
             }
+
             List<Integer> minAndMax = new ArrayList<>();
             minAndMax.add(min);
             minAndMax.add(num);
