@@ -272,6 +272,25 @@ public class DynamicArrayHeap {
         heapArray[obj] = node;
     }
 
+    private static void shiftDown2(int curIndex){
+        int childIndexLeft = curIndex * 2 + 1;
+        int childIndexRight = curIndex * 2 + 2;
+
+        if(childIndexLeft > curEnd){
+            return;
+        }else{
+            int indexToBeCompared = childIndexLeft;
+            if(childIndexRight <= curEnd && heapArray[childIndexLeft].val > heapArray[childIndexRight].val){
+                indexToBeCompared = childIndexRight;
+            }
+
+            if(heapArray[curIndex].val > heapArray[indexToBeCompared].val){
+                swapNode(curIndex, indexToBeCompared);
+                shiftDown2(indexToBeCompared);
+            }
+        }
+    }
+
     /**
      * shift down current node.
      * If child is null, stop
