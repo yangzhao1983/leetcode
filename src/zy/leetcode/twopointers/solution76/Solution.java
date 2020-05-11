@@ -88,10 +88,6 @@ public class Solution {
 
                         back = window.getFirst();
                     }
-//                    else if(s.substring(window.getLast(), window.getLast()+1).equals(cur)){
-//                        window.removeLast();
-//                        window.addLast(forward);
-//                    }
                     else{
                         // TODO: minus?
                         skippedCounts.put(cur, skippedCounts.getOrDefault(cur, 0) + 1);
