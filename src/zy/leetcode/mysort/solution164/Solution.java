@@ -61,4 +61,11 @@ public class Solution {
         int[] nums = {1,10000000};
         Assert.assertEquals(9999999, sol.maximumGap(nums));
     }
+
+    @Test
+    public void test3(){
+        Solution sol = new Solution();
+        int[] nums = {1,4, 7, 10};
+        Assert.assertEquals(3, sol.maximumGap(nums));
+    }
 }
