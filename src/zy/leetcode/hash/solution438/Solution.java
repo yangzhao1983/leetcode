@@ -14,9 +14,22 @@ public class Solution {
         for(char c : p.toCharArray()){
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        for(int i = 0; i <= s.length() - p.length(); i++){
-            if(isAnagram(s.substring(i, i + p.length()))) ans.add(i);
+        int scan = 0;
+        int i = 0;
+        while(i <= s.length() - p.length()){
+            scan = 0;
+            if(isAnagram(s.substring(i, i+p.length()))) {
+                ans.add(i);
+                int j = i + p.length();
+                while(j+scan < s.length() && scan <p.length()){
+                    if(s.charAt(i + scan) == s.charAt(j+scan)) ans.add(i+scan+1);
+                    else break;
+                    scan++;
+                }
+            }
+            i = i + scan + 1;
         }
+
         return ans;
     }
 
