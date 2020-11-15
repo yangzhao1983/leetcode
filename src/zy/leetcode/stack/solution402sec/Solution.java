@@ -1,10 +1,11 @@
 package zy.leetcode.stack.solution402sec;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class Solution {
     public String removeKdigits(String num, int k) {
-        Stack<String > stack = new Stack<>();
+        Deque<String > stack = new LinkedList<>();
         for(int i = 0; i < num.length(); i++){
             String cur = num.substring(i, i+1);
             while(!stack.isEmpty() && cur.compareTo(stack.peek()) < 0 && k>0){
