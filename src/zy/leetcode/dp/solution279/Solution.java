@@ -1,4 +1,4 @@
-package zy.leetcode.tree.solution279;
+package zy.leetcode.dp.solution279;
 
 import org.junit.Assert;
 import org.junit.Test;
